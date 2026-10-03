@@ -1,0 +1,95 @@
+{
+  "issuers": [
+    {
+      "issuer": "Copperline Bank",
+      "senders": ["statements@copperline.example"],
+      "concept": "card statement",
+      "currency": "USD",
+      "number_format": "1,234.56",
+      "date_order": "MDY",
+      "amount_anchors": ["new balance"],
+      "amount_confirm": ["payments and credits"],
+      "date_anchors": ["payment due date"],
+      "signal": ["statement"]
+    },
+    {
+      "issuer": "Copperline Bank",
+      "senders": ["alerts@copperline.example"],
+      "concept": "card charge",
+      "currency": "USD",
+      "amount_anchors": ["a charge of"],
+      "movement": true
+    },
+    {
+      "issuer": "Fernway Lending",
+      "senders": ["statements@fernwaylending.example"],
+      "concept": "loan installment",
+      "currency": "USD",
+      "amount_anchors": ["installment due"],
+      "date_anchors": ["due on"],
+      "signal": ["loan statement"]
+    },
+    {
+      "issuer": "Harborstone Insurance",
+      "senders": ["billing@harborstone.example"],
+      "concept": "insurance premium",
+      "currency": "USD",
+      "amount_anchors": ["premium due:"],
+      "date_anchors": ["payment due by"],
+      "signal": ["premium due"]
+    },
+    {
+      "issuer": "Clearbrook Water",
+      "senders": ["billing@clearbrookwater.example"],
+      "concept": "water bill",
+      "currency": "USD",
+      "date_order": "MDY",
+      "amount_anchors": ["amount:"],
+      "date_anchors": ["due date:"],
+      "signal": ["amount:", "due date:"]
+    },
+    {
+      "issuer": "Skylark Mobile",
+      "senders": ["billing@skylarkmobile.example"],
+      "concept": "phone bill",
+      "currency": "USD",
+      "amount_anchors": ["amount due"],
+      "amount_confirm": ["this month"],
+      "date_anchors": ["due date"],
+      "date_confirm": ["this month"],
+      "signal": ["amount due"]
+    },
+    {
+      "issuer": "Brightwater Toll",
+      "senders": ["accounts@brightwatertoll.example"],
+      "concept": "unpaid toll, past due",
+      "currency": "USD",
+      "amount_anchors": ["toll charge of"],
+      "signal": ["past due", "couldn't collect"],
+      "no_date_means_now": true
+    },
+    {
+      "issuer": "City Tax Office",
+      "senders": ["notices@citytax.example"],
+      "concept": "estimated tax payment",
+      "currency": "USD",
+      "amount_anchors": ["tax payment of"],
+      "date_anchors": ["is due on"],
+      "signal": ["estimated tax"]
+    },
+    {
+      "issuer": "Vehicle Registration Office",
+      "senders": ["renewals@vehicle-registry.example"],
+      "concept": "vehicle registration renewal",
+      "currency": "USD",
+      "amount_anchors": ["renewal fee of"],
+      "date_anchors": ["is due by"],
+      "signal": ["renewal"]
+    }
+  ],
+  "triage": {
+    "important": ["lakesideclinic.example"],
+    "ignore": []
+  },
+  "thresholds": { "USD": 250 }
+}
